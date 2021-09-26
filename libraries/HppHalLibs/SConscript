@@ -1,0 +1,11 @@
+from building import *
+Import('RTT_ROOT')
+Import('rtconfig')
+
+cwd = GetCurrentDir()
+src = Glob('*.c')+Glob('*.cpp')
+CPPPATH = [cwd]
+
+group = DefineGroup('Hpp_Hal_libs', src, depend=[''], CPPPATH=CPPPATH)
+
+Return('group')

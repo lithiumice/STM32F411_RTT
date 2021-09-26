@@ -54,13 +54,11 @@ extern "C"
 #define YELLOW 0xFFE0
 #define BROWN 0XBC40 //棕色
 #define BRRED 0XFC07 //棕红色
-#define GRAY 0X8430	 //灰色 \
-					 //GUI颜色
+#define GRAY 0X8430	 //灰色
 
 #define DARKBLUE 0X01CF	 //深蓝色
 #define LIGHTBLUE 0X7D7C //浅蓝色
-#define GRAYBLUE 0X5458	 //灰蓝色 \
-						 //以上三色为PANEL的颜色
+#define GRAYBLUE 0X5458	 //灰蓝色
 
 #define LIGHTGREEN 0X841F //浅绿色
 #define LIGHTGRAY 0XEF5B  //浅灰色(PANNEL)

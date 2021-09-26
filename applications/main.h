@@ -2,6 +2,7 @@
 #define __MAIN_H__ 1
 #include "stm32f4xx_hal.h"
 #include "drv_common.h"
+#include "my_def.h"
 //void Error_Handler();
 
 typedef unsigned char uint8;

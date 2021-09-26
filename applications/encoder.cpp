@@ -31,13 +31,15 @@ void MX_TIM2_Init(void)
     sConfig.IC2Filter = 15;
     if (HAL_TIM_Encoder_Init(&htim2, &sConfig) != HAL_OK)
     {
-        while(1);
+        while (1)
+            ;
     }
     sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
     sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
     if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
     {
-        while(1);
+        while (1)
+            ;
     }
     /* USER CODE BEGIN TIM2_Init 2 */
 
@@ -53,4 +55,11 @@ void encoder_init()
 uint32_t get_enc()
 {
     return (uint32_t)(__HAL_TIM_GET_COUNTER(&htim2));
+}
+
+uint32_t get_enc_diff()
+{
+    uint32_t diff = (uint32_t)(__HAL_TIM_GET_COUNTER(&htim2));
+    __HAL_TIM_SET_COUNTER(&htim2, 0);
+    return diff;
 }

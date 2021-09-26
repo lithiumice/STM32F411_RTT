@@ -58,6 +58,14 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define ENC_KEY_Pin GPIO_PIN_2
+#define ENC_KEY_GPIO_Port GPIOA
+#define TFT_DC_Pin GPIO_PIN_0
+#define TFT_DC_GPIO_Port GPIOB
+#define TFT_RST_Pin GPIO_PIN_1
+#define TFT_RST_GPIO_Port GPIOB
+#define TFT_CS_Pin GPIO_PIN_2
+#define TFT_CS_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

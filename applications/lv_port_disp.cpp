@@ -1,5 +1,5 @@
 #include "lvgl/lvgl.h"
-#include "SPI.h"
+#include "lv_port.h"
 
 #define DISP_BUF_SIZE (LV_HOR_RES_MAX * LV_VER_RES_MAX / 2)
 
@@ -35,9 +35,9 @@ static void disp_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *c
 void lv_port_disp_init()
 {
     // disp_spi_dma_init();
-    __HAL_RCC_DMA2_CLK_ENABLE();
-    HAL_NVIC_SetPriority(DMA2_Stream2_IRQn, 0, 0);
-    HAL_NVIC_EnableIRQ(DMA2_Stream2_IRQn);
+    // __HAL_RCC_DMA2_CLK_ENABLE();
+    // HAL_NVIC_SetPriority(DMA2_Stream2_IRQn, 0, 0);
+    // HAL_NVIC_EnableIRQ(DMA2_Stream2_IRQn);
 
     static lv_disp_buf_t disp_buf;
     lv_disp_buf_init(&disp_buf, lv_disp_buf1, lv_disp_buf2, DISP_BUF_SIZE);
@@ -54,16 +54,10 @@ extern "C"
 {
     void SPI1_IRQHandler(void)
     {
-        /* USER CODE BEGIN SPI1_IRQn 0 */
-
-        /* USER CODE END SPI1_IRQn 0 */
         HAL_SPI_IRQHandler(&hspi1);
-        /* USER CODE BEGIN SPI1_IRQn 1 */
-
-        /* USER CODE END SPI1_IRQn 1 */
     }
 
-    void DMA2_Stream2_IRQHandler(void)
+    void DMA2_Stream3_IRQHandler(void)
     {
         HAL_DMA_IRQHandler(&hdma_spi1_tx);
 
